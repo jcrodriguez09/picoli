@@ -25,13 +25,13 @@ public class EstadoTestGestionarNacimiento{
 	void testGestionarNacimientoAumentaMenores(){
 	
 		estado.gestionarNacimiento(1400);
-		assertEquals(6, estado.getMenores().size(), "Deben nacer 6 menores (2 para suplir muertes + 4 por expansión económica)");
+		assertEquals(6, estado.getMenores().size());
 	}
 
 	@Test
 	void testGestionarNacimientoSoloReemplazaDefunciones(){
 	
 		estado.gestionarNacimiento(1000);
-		assertEquals(2, estado.getMenores().size(), "Si la economía no crece, solo nacen 2 para suplir a los muertos");
+		assertEquals(2, estado.getMenores().size());
 	}
 }

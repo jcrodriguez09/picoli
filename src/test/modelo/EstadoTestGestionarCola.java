@@ -30,15 +30,15 @@ class EstadoTestGestionarCola {
 		
 		estado.gestionarEmpleos(1200); 
 		
-		assertEquals(4, estado.getParados().size(), "Debe haber 4 parados tras contratar a 4");
-		assertEquals(12, estado.getTrabajadores().size(), "Debe haber 12 trabajadores");
+		assertEquals(4, estado.getParados().size());
+		assertEquals(12, estado.getTrabajadores().size());
 		
 		
 		boolean hayNuevos = false;
 		for(Adulto t : estado.getTrabajadores()) {
 			if(t.getPeriodosEnEstado() == 0) hayNuevos = true;
 		}
-		assertTrue(hayNuevos, "Los recién contratados deben tener su antigüedad reseteada a 0");
+		assertTrue(hayNuevos);
 	}
 
 	@Test
@@ -46,15 +46,15 @@ class EstadoTestGestionarCola {
 	
 		estado.gestionarEmpleos(2000); 
 		
-		assertEquals(0, estado.getParados().size(), "Debería haber vaciado toda la cola de parados");
-		assertEquals(16, estado.getTrabajadores().size(), "Debe haber contratado a todos los disponibles (16 max)");
+		assertEquals(0, estado.getParados().size());
+		assertEquals(16, estado.getTrabajadores().size());
 	}
 	
 	@Test
 	void testGestionarEmpleosDespedir() {
 				estado.gestionarEmpleos(600); 
 		
-		assertEquals(10, estado.getParados().size(), "Debe haber 10 parados (8 que ya había + 2 despedidos)");
-		assertEquals(6, estado.getTrabajadores().size(), "Debe haber 6 trabajadores");
+		assertEquals(10, estado.getParados().size());
+		assertEquals(6, estado.getTrabajadores().size());
 	}
 }
